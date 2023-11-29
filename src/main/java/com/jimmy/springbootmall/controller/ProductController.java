@@ -37,12 +37,12 @@ public class ProductController {
 
     @PutMapping("/products/{productId}")
      public ResponseEntity<Product> updateProduct(@PathVariable Integer productId,
-                                                  @RequestBody @Valid ProductRequest productRequest){
+                                                  @RequestBody @Valid ProductRequest productRequest) {
         //檢查product是否存在
         Product product = productService.getProductById(productId);
 
-        if (product == null){
-            return  ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        if (product == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
 
         //修改商品的數據
@@ -52,5 +52,12 @@ public class ProductController {
 
         return ResponseEntity.status(HttpStatus.OK).body(updateProduct);
 
+    }
+
+    @DeleteMapping("/products/{productId}")
+     public ResponseEntity<?> deleteProduct(@PathVariable Integer productId){
+        productService.deleteProductById(productId);
+
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
      }
 }
