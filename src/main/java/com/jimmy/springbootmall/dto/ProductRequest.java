@@ -1,8 +1,7 @@
 package com.jimmy.springbootmall.dto;
 
 import com.jimmy.springbootmall.constant.ProductCategory;
-import org.antlr.v4.runtime.misc.NotNull;
-import org.springframework.stereotype.Component;
+import jakarta.validation.constraints.NotNull;
 
 
 public class ProductRequest {
