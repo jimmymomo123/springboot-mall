@@ -23,6 +23,7 @@ public class UserDaoImpl implements UserDao {
     @Autowired
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
+
     @Override
     public User getUserById(Integer userId) {
         String sql = "select user_id, email, password, created_date, last_modified_date " +
